@@ -25,4 +25,19 @@ router.post('/new', (req, res) => {
 	  }) 
 })
 
+
+router.put('/:id', (req, res) => {
+	Todo.update(
+  		{ title: req.body.title },
+  		{ where: { id: req.params.id } }
+	)
+    .then((noOfRowsModified) => {
+    	res.status(200).send(noOfRowsModified);
+    })
+    .catch((err) => {
+    	console.log("Error: ", err);
+   	 	res.status(500).send("There was an error updating todo");
+    })
+})
+
 module.exports = router;
