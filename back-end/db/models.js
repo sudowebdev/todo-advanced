@@ -27,3 +27,15 @@ const Todo = db.define('todo', {
     },
     priority: Sequelize.INTEGER,
 });
+	
+db.sync({force: false})
+     .then(() => {
+         console.log("Database Synchronised");
+     })
+
+module.exports = {
+     db,
+     models: {
+        Todo
+     }
+ }; 
