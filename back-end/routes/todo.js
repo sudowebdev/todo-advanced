@@ -13,6 +13,18 @@ router.get('/', (req, res) => {
 	})
 })
 
+router.get('/:priority', (req, res) => {
+	Todo.findAll({ where: { priority: req.params.priority } })
+		.then((todos) => {
+			res.status(200).send(todos);
+		})
+		.catch((err) => {
+			console.log("Error retrieving todos having the given priority: ", err);
+			res.status(500).send("There was an error retrieving todos with the given priority");
+		})
+
+})
+
 router.post('/new', (req, res) => {
 
 	Todo.create({ title: req.body.title, priority: req.body.priority })
