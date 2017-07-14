@@ -2,10 +2,10 @@ const express = require('express');
 
 const app = express();
 
+const indexRouter = require('./routes');
 
-app.get('/', (req, res)=>{
-	res.send('Hello To-Do');
-})
+app.use('/api', indexRouter);
+
 app.listen(3333, ()=>{
 	console.log('Listening on port 3333');
 })
