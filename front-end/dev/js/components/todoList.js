@@ -25,6 +25,7 @@ export default class TodoList extends React.Component{
 							<li>
 								<span onClick={this.deleteTodo.bind(this, todo.id)}>{todo.title}</span>
 								<button onClick={this.editTodo.bind(this, todo.id)}>Edit</button>
+								<br />
 								<input placeholder="Type the new value of todo" style={ { 'display': 'none' } } ref="newtodo" />
 							</li>
 							
@@ -51,5 +52,7 @@ export default class TodoList extends React.Component{
 		console.log(id);
 		console.log(this.refs.newtodo);
 		this.refs.newtodo.style.display = 'inline-block';
+
+		
 	}
 }
