@@ -13,5 +13,16 @@ router.get('/', (req, res) => {
 	})
 })
 
+router.post('/new', (req, res) => {
+
+	Todo.create({ title: req.body.title, priority: req.body.priority })
+	  .then((todo) => {
+	  	res.status(200).send(todo);
+	  })
+	  .catch((err) => {
+	  	console.log("Error: ", err)
+	  	res.status(500).send("There was an error creating todo");
+	  }) 
+})
 
 module.exports = router;
