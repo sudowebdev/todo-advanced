@@ -17,7 +17,9 @@ export default class TodoList extends React.Component{
 		return (
 		<div>
 			<h2>To-Do</h2>
+			<input placeholder="Press ENTER to update..." style={ { 'display': 'none' } } ref="newtodo" />
 			<ul>
+
 				{
 					this.props.todo.data.map(function(todo){
 						return (
@@ -25,8 +27,6 @@ export default class TodoList extends React.Component{
 							<li>
 								<span onClick={this.deleteTodo.bind(this, todo.id)}>{todo.title}</span>
 								<button onClick={this.editTodo.bind(this, todo.id)}>Edit</button>
-								<br />
-								<input placeholder="Type the new value of todo" style={ { 'display': 'none' } } ref="newtodo" />
 							</li>
 							
 									
@@ -53,6 +53,6 @@ export default class TodoList extends React.Component{
 		console.log(this.refs.newtodo);
 		this.refs.newtodo.style.display = 'inline-block';
 
-		
+
 	}
 }
