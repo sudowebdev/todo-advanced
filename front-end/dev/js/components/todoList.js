@@ -14,7 +14,15 @@ export default class TodoList extends React.Component{
 
 	render(){
 		console.log(this.props);
-		return null;
+		return (
+		<ul> 
+			{
+				this.props.todo.data.map(function(todo){
+					return (<li key={todo.id}>{todo.title}</li>)
+				})
+			}
+		</ul>	
+		);
 	}
 
 	componentDidMount(){
