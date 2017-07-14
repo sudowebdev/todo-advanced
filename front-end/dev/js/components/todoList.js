@@ -20,7 +20,17 @@ export default class TodoList extends React.Component{
 			<ul>
 				{
 					this.props.todo.data.map(function(todo){
-						return (<li key={todo.id} onClick={this.deleteTodo.bind(this, todo.id)}>{todo.title}</li>)
+						return (
+						<div key={todo.id}>
+							<li>
+								<span onClick={this.deleteTodo.bind(this, todo.id)}>{todo.title}</span>
+								<button onClick={this.editTodo.bind(this, todo.id)}>Edit</button>
+								<input placeholder="Type the new value of todo" style={ { 'display': 'none' } } ref="newtodo" />
+							</li>
+							
+									
+						</div>
+						);
 					}.bind(this))
 				}
 			</ul>
@@ -35,5 +45,11 @@ export default class TodoList extends React.Component{
 	deleteTodo(id){
 		console.log(id);
 		this.props.dispatch(deleteTodo(id));
+	}
+
+	editTodo(id){
+		console.log(id);
+		console.log(this.refs.newtodo);
+		this.refs.newtodo.style.display = 'inline-block';
 	}
 }
