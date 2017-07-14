@@ -1,6 +1,12 @@
+import axios from 'axios';
+
 export function fetchTodo(){
-	return {
-		type: 'FETCH_TODO',
-		payload: '123'
-	}
+	return (dispatch) => {
+			
+			dispatch({type: 'FETCH_TODO', payload: '123'});
+
+			dispatch({type: 'FETCH_TODO', payload: '456'});
+
+
+		}
 }
