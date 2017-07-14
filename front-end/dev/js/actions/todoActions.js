@@ -43,3 +43,27 @@ export function deleteTodo(id){
 
 		}
 }
+
+export function updateToDo(id, val){
+
+	return (dispatch) => {
+		axios.put('http://localhost:3333/api/todo/' + id, {
+		    title: val
+		  })
+		  .then(function (response) {
+		    console.log(response);
+		    axios.get('http://localhost:3333/api/todo')
+						.then((response) => {
+							dispatch({type: 'FETCH_TODO_FULFILLED', payload: response.data})
+						})
+						.catch((err) => {
+							dispatch({type: 'FETCH_TODO_REJECTED', payload: err })
+						})
+						
+
+		  })
+		  .catch(function (error) {
+		    console.log(error);
+		  });
+	}
+}
