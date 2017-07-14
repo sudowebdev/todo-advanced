@@ -26,7 +26,7 @@ export default class TodoList extends React.Component{
 						<div key={todo.id}>
 							<li>
 								<span onClick={this.deleteTodo.bind(this, todo.id)}>{todo.title}</span>
-								<button onClick={this.editTodo.bind(this, todo.id)}>Edit</button>
+								&nbsp;&nbsp;&nbsp;<button onClick={this.editTodo.bind(this, todo.id)}>Edit Todo</button>
 							</li>
 							
 									
