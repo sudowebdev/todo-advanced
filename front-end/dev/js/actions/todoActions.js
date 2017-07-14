@@ -10,7 +10,7 @@ export function fetchTodo(){
 					dispatch({type: 'FETCH_TODO_FULFILLED', payload: response.data})
 				})
 				.catch((err) => {
-					dispatch({type: 'FETCH_TODO_REJECTED', payload: response.statusText })
+					dispatch({type: 'FETCH_TODO_REJECTED', payload: err })
 				})
 
 
