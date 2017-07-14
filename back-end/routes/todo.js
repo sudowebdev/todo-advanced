@@ -40,4 +40,16 @@ router.put('/:id', (req, res) => {
     })
 })
 
+
+router.delete('/:id', (req, res) => {
+	Todo.destroy({ where: { id: req.params.id } })
+		.then((response) => {
+			res.status(200).send("Success");
+		})
+		.catch((err) => {
+			console.log("Error: ", err);
+   	 		res.status(500).send("There was an error deleting todo");
+		})
+})
+
 module.exports = router;
