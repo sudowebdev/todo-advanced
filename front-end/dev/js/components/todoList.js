@@ -2,7 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { fetchTodo, deleteTodo } from '../actions/todoActions';
+import { fetchTodo, deleteTodo, updateToDo } from '../actions/todoActions';
 
 @connect((state) => {
 	return {
@@ -17,7 +17,7 @@ export default class TodoList extends React.Component{
 		return (
 		<div>
 			<h2>To-Do</h2>
-			<input placeholder="Press ENTER to update..." style={ { 'display': 'none' } } ref="newtodo" />
+			<input placeholder="Press ENTER to update..." style={ { 'display': 'none' } } ref="newtodo"/>
 			<ul>
 
 				{
@@ -52,7 +52,15 @@ export default class TodoList extends React.Component{
 		console.log(id);
 		console.log(this.refs.newtodo);
 		this.refs.newtodo.style.display = 'inline-block';
+		this.refs.newtodo.onkeyup = function(event){
+			if(event.keyCode == 13){
+				
+				let val = this.refs.newtodo.value;
+				
 
+				this.props.dispatch(updateToDo(id, val));
+			}
+		}.bind(this)
 
 	}
 }
