@@ -17,6 +17,21 @@ const todoReducer = (state = {
 			state = {...state, statusText: action.payload};
 			break;
 		}
+		case 'DELETE_TODO_PENDING': {
+			state = {...state, statusText: action.payload};
+			break;
+		}
+		case 'DELETE_TODO_FULFILLED': {
+
+			state = {...state, statusText: action.payload};
+			break;
+		}
+		case 'DELETE_TODO_REJECTED': {
+
+			state = {...state, statusText: action.payload};
+			break;
+		}
+
 	}
 
 	return state;

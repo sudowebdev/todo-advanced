@@ -2,7 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { fetchTodo } from '../actions/todoActions';
+import { fetchTodo, deleteTodo } from '../actions/todoActions';
 
 @connect((state) => {
 	return {
@@ -18,8 +18,8 @@ export default class TodoList extends React.Component{
 		<ul> 
 			{
 				this.props.todo.data.map(function(todo){
-					return (<li key={todo.id}>{todo.title}</li>)
-				})
+					return (<li key={todo.id} onClick={this.deleteTodo.bind(this, todo.id)}>{todo.title}</li>)
+				}.bind(this))
 			}
 		</ul>	
 		);
@@ -27,5 +27,10 @@ export default class TodoList extends React.Component{
 
 	componentDidMount(){
 		this.props.dispatch(fetchTodo());
+	}
+
+	deleteTodo(id){
+		console.log(id);
+		this.props.dispatch(deleteTodo(id));
 	}
 }
