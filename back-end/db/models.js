@@ -12,3 +12,18 @@ const db = new Sequelize('todoadvanced', 'todoadmin', 'todopass', {
     }
 
 });
+
+//defining the schema of the table/Model
+const Todo = db.define('todo', {
+    id: {
+	   type: Sequelize.INTEGER,
+ 	   primaryKey: true,
+       autoIncrement: true
+    },
+    title: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      unique: true
+    },
+    priority: Sequelize.INTEGER,
+});
