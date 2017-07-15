@@ -9,6 +9,21 @@ To have this project in your local computer, either **download** the repository 
 
 ## Back-End implemented via Node
 
+### Installation
+
+After having the project in your local computer, navigate to the ***back-end*** directory using:
+```
+> cd back-end
+```
+
+Now, to install all the **dependencies**, run:
+```
+> npm install
+```
+
+Everything is now set-up!
+
+
 
 
 ## Front-End is implemented via React
