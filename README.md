@@ -23,7 +23,11 @@ Now, to install all the **dependencies**, run:
 
 Everything is now set-up!
 
-
+### Execution steps
+To start the **back-end server**, just run the following command:
+```
+> node server
+```
 
 
 ## Front-End is implemented via React
