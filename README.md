@@ -46,4 +46,9 @@ Now, to install all the **dependencies**, run:
 
 Everything is now set-up!
 
+### Execution steps:
+To execute the **webpack-dev-server**, just run the following command:
+```
+> npm run start
+```
 
