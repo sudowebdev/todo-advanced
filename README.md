@@ -1,15 +1,15 @@
 # To-Do List (Advanced)
 
-### Installation
+### Installation:
 
 To have this project in your local computer, either **download** the repository or **clone** it (at whatever path you want) using the following command: 
 ```
 > git clone https://github.com/sudowebdev/todo-advanced.git
 ```
 
-## Back-End implemented via Node
+## Back-End (implemented via Node):
 
-### Installation
+### Installation:
 
 After having the project in your local computer, navigate to the ***back-end*** directory using:
 ```
@@ -23,14 +23,14 @@ Now, to install all the **dependencies**, run:
 
 Everything is now set-up!
 
-### Execution steps
+### Execution steps:
 To start the **back-end server**, just run the following command:
 ```
 > node server
 ```
 
 
-## Front-End is implemented via React
+## Front-End (implemented via React):
 
 
 
