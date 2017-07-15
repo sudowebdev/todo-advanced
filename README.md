@@ -32,6 +32,18 @@ To start the **back-end server**, just run the following command:
 
 ## Front-End (implemented via React):
 
+### Installation:
 
+After having the project in your local computer, navigate to the ***front-end*** directory using:
+```
+> cd front-end
+```
+
+Now, to install all the **dependencies**, run:
+```
+> npm install
+```
+
+Everything is now set-up!
 
 
